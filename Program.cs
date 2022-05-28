@@ -30,8 +30,8 @@ Console.WriteLine($"{item.Key,-20}== {item.Value,10:N0}");
 //Suma de toda la población
 Console.WriteLine($"Población General:{dep.Values.Sum():N0}");
 //Mayor y menor población
-Console.WriteLine($"Menor Población: {orderDepResult.First().key}")
-Console.WriteLine($"Mayor Población: {orderDepResult.Last().key}")
+Console.WriteLine($"Mas pequeño: {orderDepResult.First().key}")
+Console.WriteLine($"Mas grande: {orderDepResult.Last().key}")
 
 //Ordenar con orderBy de LINQ
 var orderDepResult=dep.OrderBy(d=>d.Value);
