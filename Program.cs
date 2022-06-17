@@ -30,7 +30,7 @@ Console.WriteLine($"{item.Key,-20}==> {item.Value,10:N0}");
 //Suma de toda la población
 Console.WriteLine($"Población General:{dep.Values.Sum():N0}");
 //Mayor y menor población
-var minResult = dep.where(x => x.Value == dep.Values.Min());
+var minResult = dep.Where(x => x.Value == dep.Values.Min());
 Console.WriteLine($"Mas pequeño: {minResult.First().key}");
 Console.WriteLine($"Mas grande: {orderDepResult.Last().key}");
 
