@@ -1,6 +1,5 @@
-﻿//programa que permita visualizar los departamentos de Nicaragua con su cantidad poblacional.
-//Encuentre: Mayor, menor, sumas y ordene los datos
 using System.Collections;
+//programa que permita visualizar los departamentos de Nicaragua con su cantidad poblacional.//Encuentre: Mayor, menor, sumas y ordene los datos
 Dictionary<string, int> dep = new Dictionary<string, int>()
 {
     {"Boaco",185013},
@@ -21,16 +20,13 @@ Dictionary<string, int> dep = new Dictionary<string, int>()
     {"Río San Juan",135446},
     {"Rivas",182645}
 };
-//Ordenando de manera ascendente
-var orderDepResult=dep.OrderBy(d=>d.Value);
-
 //Mostrar el diccionario 
 foreach (var item in dep)
 Console.WriteLine($"{item.Key,-20}==> {item.Value,10:N0}");
 //Suma de toda la población
 Console.WriteLine($"Población General:{dep.Values.Sum():N0}");
 //Mayor y menor población
-var minResult = dep.where(x => x.Value == dep.Values.Min());
+var minResult = dep.Where(x => x.Value == dep.Values.Min());
 Console.WriteLine($"Mas pequeño: {minResult.First().key}");
 Console.WriteLine($"Mas grande: {orderDepResult.Last().key}");
 
