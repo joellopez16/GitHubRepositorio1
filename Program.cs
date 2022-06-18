@@ -1,5 +1,4 @@
-using System.Collections;
-//programa que permita visualizar los departamentos de Nicaragua con su cantidad poblacional.//Encuentre: Mayor, menor, sumas y ordene los datos
+using System.Collections; //programa que permita visualizar los departamentos de Nicaragua con su cantidad poblacional.//Encuentre: Mayor, menor, sumas y ordene los datos
 Dictionary<string, int> dep = new Dictionary<string, int>()
 {
     {"Boaco",185013},
@@ -20,15 +19,15 @@ Dictionary<string, int> dep = new Dictionary<string, int>()
     {"Río San Juan",135446},
     {"Rivas",182645}
 };
-//Mostrar el diccionario 
+//Mostrar los departamentos con su poblacion
 foreach (var item in dep)
-Console.WriteLine($"{item.Key,-20}==> {item.Value,10:N0}");
-//Suma de toda la población
-Console.WriteLine($"Población General:{dep.Values.Sum():N0}");
-//Mayor y menor población
+Console.WriteLine($"{item.Key,20}==> {item.Value,10:N0}");
+//mostrar totales con nombres de los departamentos
 var minResult = dep.Where(x => x.Value == dep.Values.Min());
-Console.WriteLine($"Mas pequeño: {minResult.First().key}");
-Console.WriteLine($"Mas grande: {orderDepResult.Last().key}");
+var maxResult = dep.Where(x => x.Value == dep.Values.Max());
+Console.WriteLine($"Poblacion General: {dep.Values.Sum().NO}");
+Console.WriteLine($"Mayor Población: {maxResult.First().key}");
+Console.WriteLine($"Menor Poblacion: {minResult.First().key}");
 
 //Ordenar con orderBy de LINQ
 var orderDepResult=dep.OrderBy(d=>d.Value);
